@@ -1,0 +1,108 @@
+import 'package:flutter/material.dart';
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 1,
+        shadowColor: Colors.deepPurple,
+        title: const TextDecoration(
+            text: 'Force your future',
+            fontSize: 30,
+            fontWeight: FontWeight.bold),
+        centerTitle: true,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 50),
+        child: Column(
+          children: [
+            const TextDecoration(
+                text: 'What do you want to learn today?', fontSize: 25),
+            const SizedBox(height: 20),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 15),
+              width: size.width,
+              height: size.height * 0.5,
+              child: GridView.count(
+                crossAxisSpacing: 10.0,
+                mainAxisSpacing: 10.0,
+                crossAxisCount: 2,
+                children: [
+                  CardDecoration(
+                    text: 'Regular Verbs',
+                    color: Colors.deepPurple.withOpacity(0.5),
+                  ),
+                  CardDecoration(
+                    text: 'Irregular Verbs',
+                    color: Colors.red.withOpacity(0.45),
+                  ),
+                  CardDecoration(
+                    text: 'Phrasal Verbs',
+                    color: Colors.green.withOpacity(0.5),
+                  ),
+                  CardDecoration(
+                    text: 'Grammar',
+                    color: Colors.blue.withOpacity(0.5),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class CardDecoration extends StatelessWidget {
+  const CardDecoration({
+    super.key,
+    required this.text,
+    required this.color,
+  });
+
+  final String text;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      shadowColor: Colors.deepPurple,
+      color: color,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          TextDecoration(text: text, fontSize: 20, fontWeight: FontWeight.bold),
+        ],
+      ),
+    );
+  }
+}
+
+class TextDecoration extends StatelessWidget {
+  const TextDecoration({
+    super.key,
+    required this.text,
+    this.fontSize,
+    this.fontWeight,
+  });
+
+  final String text;
+  final int? fontSize;
+  final FontWeight? fontWeight;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: const TextStyle(
+        fontSize: 20.0,
+        fontWeight: FontWeight.bold,
+      ),
+    );
+  }
+}
