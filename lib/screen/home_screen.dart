@@ -110,6 +110,18 @@ class HomeScreen extends StatelessWidget {
                         color: Colors.orange.withOpacity(0.5),
                       ),
                     ),
+                     GestureDetector(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const ReadingScreen();
+                        }));
+                      },
+                      child: CardDecoration(
+                        text: 'Reading',
+                        color: Colors.blue.withOpacity(0.5),
+                      ),
+                    ),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(context,
@@ -120,18 +132,6 @@ class HomeScreen extends StatelessWidget {
                       child: CardDecoration(
                         text: 'Tips to learn',
                         color: Colors.brown.withOpacity(0.5),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return const ReadingScreen();
-                        }));
-                      },
-                      child: CardDecoration(
-                        text: 'Reading',
-                        color: Colors.blue.withOpacity(0.5),
                       ),
                     ),
                   ],
