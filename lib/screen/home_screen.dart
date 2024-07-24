@@ -61,9 +61,17 @@ class HomeScreen extends StatelessWidget {
                       color: Colors.red.withOpacity(0.45),
                     ),
                   ),
-                  CardDecoration(
-                    text: 'Phrasal Verbs',
-                    color: Colors.green.withOpacity(0.5),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const PhrasalVerbsScreen();
+                      }));
+                    },
+                    child: CardDecoration(
+                      text: 'Phrasal Verbs',
+                      color: Colors.green.withOpacity(0.5),
+                    ),
                   ),
                   CardDecoration(
                     text: 'Grammar',

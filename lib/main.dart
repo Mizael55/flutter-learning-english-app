@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'providers/irregular_verbs_provider.dart';
+import 'providers/phrasal_verbs_provider.dart';
 import 'providers/regular_verbs_providers.dart';
 import 'screen/screen.dart';
 
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => RegularVerbsProvider()),
         ChangeNotifierProvider(create: (context) => IrregularVerbsProvider()),
+        ChangeNotifierProvider(create: (context) => PhrasalVerbsProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

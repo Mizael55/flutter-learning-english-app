@@ -65,4 +65,9 @@ class IrregularVerbsModels {
       'example': example,
     };
   }
+
+  @override
+  String toString() {
+    return 'IrregularVerbsModels{id: $id, type: $type, english: $english, spanish: $spanish, example: $example}';
+  }
 }
