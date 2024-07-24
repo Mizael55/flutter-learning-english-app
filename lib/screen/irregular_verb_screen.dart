@@ -46,7 +46,7 @@ class IrregularVerbScreen extends StatelessWidget {
                 color: Colors.blue[900],
               ),
             ),
-            Container(
+            SizedBox(
               height: size.height * 0.8 + 56,
               child: ListView.builder(
                 itemCount: irregularVerbsProvider.length,

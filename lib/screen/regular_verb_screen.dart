@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../providers/regular_verbs_providers.dart';
+import '../providers/regular_verbs_provider.dart';
 
 class RegularVerbsScreen extends StatelessWidget {
   const RegularVerbsScreen({super.key});
@@ -47,7 +47,7 @@ class RegularVerbsScreen extends StatelessWidget {
                 color: Colors.blue[900],
               ),
             ),
-            Container(
+            SizedBox(
               height: size.height * 0.8 + 56,
               child: ListView.builder(
                 itemCount: regularVerbsProvider.length,

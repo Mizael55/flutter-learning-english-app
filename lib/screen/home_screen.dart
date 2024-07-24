@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import '../providers/regular_verbs_providers.dart';
+import '../providers/regular_verbs_provider.dart';
 import 'screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -23,64 +22,78 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 50),
-        child: Column(
-          children: [
-            const TextDecoration(
-                text: 'What do you want to learn today?', fontSize: 25),
-            const SizedBox(height: 20),
-            Container(
-              margin: const EdgeInsets.symmetric(horizontal: 15),
-              width: size.width,
-              height: size.height * 0.5,
-              child: GridView.count(
-                crossAxisSpacing: 10.0,
-                mainAxisSpacing: 10.0,
-                crossAxisCount: 2,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return const RegularVerbsScreen();
-                      }));
-                    },
-                    child: CardDecoration(
-                      text: 'Regular Verbs',
-                      color: Colors.deepPurple.withOpacity(0.5),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const TextDecoration(
+                  text: 'What do you want to learn today?', fontSize: 25),
+              const SizedBox(height: 20),
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 15),
+                width: size.width,
+                height: size.height,
+                child: GridView.count(
+                  crossAxisSpacing: 10.0,
+                  mainAxisSpacing: 10.0,
+                  crossAxisCount: 2,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const RegularVerbsScreen();
+                        }));
+                      },
+                      child: CardDecoration(
+                        text: 'Regular Verbs',
+                        color: Colors.deepPurple.withOpacity(0.5),
+                      ),
                     ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return const IrregularVerbScreen();
-                      }));
-                    },
-                    child: CardDecoration(
-                      text: 'Irregular Verbs',
-                      color: Colors.red.withOpacity(0.45),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const IrregularVerbScreen();
+                        }));
+                      },
+                      child: CardDecoration(
+                        text: 'Irregular Verbs',
+                        color: Colors.red.withOpacity(0.45),
+                      ),
                     ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return const PhrasalVerbsScreen();
-                      }));
-                    },
-                    child: CardDecoration(
-                      text: 'Phrasal Verbs',
-                      color: Colors.green.withOpacity(0.5),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const PhrasalVerbsScreen();
+                        }));
+                      },
+                      child: CardDecoration(
+                        text: 'Phrasal Verbs',
+                        color: Colors.green.withOpacity(0.5),
+                      ),
                     ),
-                  ),
-                  CardDecoration(
-                    text: 'Grammar',
-                    color: Colors.blue.withOpacity(0.5),
-                  ),
-                ],
-              ),
-            )
-          ],
+                    CardDecoration(
+                      text: 'Grammar',
+                      color: Colors.blue.withOpacity(0.5),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const VocabularyScreen();
+                        }));
+                      },
+                      child: CardDecoration(
+                        text: 'Voacabulary',
+                        color: Colors.yellow.withOpacity(0.5),
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
