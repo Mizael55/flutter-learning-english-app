@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/regular_verbs_providers.dart';
+import 'screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Provider.of<RegularVerbsProvider>(context, listen: false).getAllVerbs();
     final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -32,9 +37,17 @@ class HomeScreen extends StatelessWidget {
                 mainAxisSpacing: 10.0,
                 crossAxisCount: 2,
                 children: [
-                  CardDecoration(
-                    text: 'Regular Verbs',
-                    color: Colors.deepPurple.withOpacity(0.5),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const RegularVerbsScreen();
+                      }));
+                    },
+                    child: CardDecoration(
+                      text: 'Regular Verbs',
+                      color: Colors.deepPurple.withOpacity(0.5),
+                    ),
                   ),
                   CardDecoration(
                     text: 'Irregular Verbs',
