@@ -12,7 +12,7 @@ class VocabularyScreen extends StatelessWidget {
       Provider.of<VocabularyProvider>(context).getVocabulary();
       return Scaffold(
         appBar: AppBar(
-          title: const Text('Vocabularys'),
+          title: const Text('Vocabularys', style: TextStyle(color: Colors.black, fontSize: 25.0, fontWeight: FontWeight.bold)),
           centerTitle: true,
         ),
         body: const Center(
@@ -22,7 +22,7 @@ class VocabularyScreen extends StatelessWidget {
     }
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Vocabularys'),
+        title: const Text('Vocabularys', style: TextStyle(color: Colors.black, fontSize: 25.0, fontWeight: FontWeight.bold)),
         centerTitle: true,
       ),
       body: ListView.builder(
@@ -39,7 +39,7 @@ class VocabularyScreen extends StatelessWidget {
             ),
             subtitle: Text(vocab.example,
                 style: const TextStyle(
-                  fontSize: 16.0,
+                  fontSize: 17.0,
                 )),
           );
         },

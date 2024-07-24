@@ -29,9 +29,10 @@ class HomeScreen extends StatelessWidget {
                   text: 'What do you want to learn today?', fontSize: 25),
               const SizedBox(height: 20),
               Container(
-                margin: const EdgeInsets.symmetric(horizontal: 15),
+                margin: const EdgeInsets.symmetric(horizontal: 30),
+                padding: const EdgeInsets.symmetric(horizontal: 10),
                 width: size.width,
-                height: size.height,
+                height: size.height * 0.7 + 50,
                 child: GridView.count(
                   crossAxisSpacing: 10.0,
                   mainAxisSpacing: 10.0,
@@ -87,6 +88,30 @@ class HomeScreen extends StatelessWidget {
                       child: CardDecoration(
                         text: 'Voacabulary',
                         color: Colors.yellow.withOpacity(0.5),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        // Navigator.push(context,
+                        //     MaterialPageRoute(builder: (context) {
+                        //   return const VocabularyScreen();
+                        // }));
+                      },
+                      child: CardDecoration(
+                        text: 'Expressions',
+                        color: Colors.orange.withOpacity(0.5),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        // Navigator.push(context,
+                        //     MaterialPageRoute(builder: (context) {
+                        //   return const VocabularyScreen();
+                        // }));
+                      },
+                      child: CardDecoration(
+                        text: 'Advices to learn',
+                        color: Colors.brown.withOpacity(0.5),
                       ),
                     ),
                   ],
