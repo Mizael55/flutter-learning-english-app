@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learning_english/share_preferences/preferences.dart';
 import 'package:provider/provider.dart';
 import '../providers/providers.dart';
 import '../screen/screen.dart';
@@ -100,7 +101,8 @@ class App extends StatelessWidget {
                                   color: Colors.black,
                                 ),
                                 onPressed: () {
-                                  handlePageView.markAllPagesAsViewed();
+                                  handlePageView.setAllPagesViewed(true);
+                                  Preferences.allPagesViewed = true;
                                 },
                               ))
                         ],
