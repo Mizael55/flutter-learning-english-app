@@ -122,6 +122,18 @@ class HomeScreen extends StatelessWidget {
                         color: Colors.brown.withOpacity(0.5),
                       ),
                     ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const ReadingScreen();
+                        }));
+                      },
+                      child: CardDecoration(
+                        text: 'Reading',
+                        color: Colors.blue.withOpacity(0.5),
+                      ),
+                    ),
                   ],
                 ),
               )

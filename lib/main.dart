@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => VocabularyProvider()),
         ChangeNotifierProvider(create: (context) => AdvicesProvider()),
         ChangeNotifierProvider(create: (context) => ExpressionsProvider()),
+        ChangeNotifierProvider(create: (context) => ReadingProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

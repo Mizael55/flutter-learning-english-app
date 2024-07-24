@@ -68,8 +68,9 @@ flutter:
     - assets/vocabulary.json
     - assets/advices.json
     - assets/expressions.json
-    - assets/Adverbial-phrases-of-frequency-time-and-place.pdf
-    - assets/Comparatives-and-Superlative.pdf
+    - assets/reading.json
+    # - assets/Adverbial-phrases-of-frequency-time-and-place.pdf
+    # - assets/Comparatives-and-Superlative.pdf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

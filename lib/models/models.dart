@@ -1,3 +1,4 @@
+export 'package:learning_english/models/reading_models.dart';
 export 'package:learning_english/models/expressions.dart';
 export 'package:learning_english/models/advices.dart';
 export 'package:learning_english/models/vocabulary_models.dart';
