@@ -74,10 +74,18 @@ class HomeScreen extends StatelessWidget {
                         color: Colors.green.withOpacity(0.5),
                       ),
                     ),
-                    CardDecoration(
-                      text: 'Grammar',
-                      color: Colors.blue.withOpacity(0.5),
-                    ),
+                    // GestureDetector(
+                    //   onTap: () {
+                    //     Navigator.push(context,
+                    //         MaterialPageRoute(builder: (context) {
+                    //       return const GrammarScreen();
+                    //     }));
+                    //   },
+                    //   child: CardDecoration(
+                    //     text: 'Grammar',
+                    //     color: Colors.blue.withOpacity(0.5),
+                    //   ),
+                    // ),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(context,
