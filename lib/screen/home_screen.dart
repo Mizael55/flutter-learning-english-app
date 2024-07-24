@@ -92,10 +92,10 @@ class HomeScreen extends StatelessWidget {
                     ),
                     GestureDetector(
                       onTap: () {
-                        // Navigator.push(context,
-                        //     MaterialPageRoute(builder: (context) {
-                        //   return const VocabularyScreen();
-                        // }));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const ExpressionsScreen();
+                        }));
                       },
                       child: CardDecoration(
                         text: 'Expressions',
@@ -104,13 +104,13 @@ class HomeScreen extends StatelessWidget {
                     ),
                     GestureDetector(
                       onTap: () {
-                        // Navigator.push(context,
-                        //     MaterialPageRoute(builder: (context) {
-                        //   return const VocabularyScreen();
-                        // }));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const AdvicesScreen();
+                        }));
                       },
                       child: CardDecoration(
-                        text: 'Advices to learn',
+                        text: 'Tips to learn',
                         color: Colors.brown.withOpacity(0.5),
                       ),
                     ),
@@ -143,7 +143,7 @@ class CardDecoration extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          TextDecoration(text: text, fontSize: 20, fontWeight: FontWeight.bold),
+          TextDecoration(text: text, fontSize: 18, fontWeight: FontWeight.bold),
         ],
       ),
     );
@@ -159,15 +159,15 @@ class TextDecoration extends StatelessWidget {
   });
 
   final String text;
-  final int? fontSize;
+  final double? fontSize;
   final FontWeight? fontWeight;
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: const TextStyle(
-        fontSize: 20.0,
+      style: TextStyle(
+        fontSize: fontSize,
         fontWeight: FontWeight.bold,
       ),
     );

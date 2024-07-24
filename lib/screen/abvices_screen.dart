@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/providers.dart';
 
-class VocabularyScreen extends StatelessWidget {
-  const VocabularyScreen({super.key});
+class AdvicesScreen extends StatelessWidget {
+  const AdvicesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final vocabulary = Provider.of<VocabularyProvider>(context).vocabularyList;
-    if (vocabulary.isEmpty) {
-      Provider.of<VocabularyProvider>(context).getVocabulary();
+    final abvices = Provider.of<AdvicesProvider>(context).abvices;
+    if (abvices.isEmpty) {
+      Provider.of<AdvicesProvider>(context).getAbvices();
       return Scaffold(
         appBar: AppBar(
-          title: const Text('Vocabularys',
+          title: const Text('Tips',
               style: TextStyle(
                   color: Colors.black,
                   fontSize: 25.0,
@@ -26,7 +26,7 @@ class VocabularyScreen extends StatelessWidget {
     }
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Vocabularys',
+        title: const Text('Tips',
             style: TextStyle(
                 color: Colors.black,
                 fontSize: 25.0,
@@ -34,18 +34,14 @@ class VocabularyScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: ListView.builder(
-        itemCount: vocabulary.length,
+        itemCount: abvices.length,
         itemBuilder: (context, index) {
-          final vocab = vocabulary[index];
+          final abvice = abvices[index];
           return ListTile(
             title: _TextDecoration(
-              text: '${vocab.id}. ${vocab.word}  -   ${vocab.spanish}',
-              color: Colors.yellow[800],
+              text: '${index + 1}. ${abvice.tip}', color: Colors.brown[900],
             ),
-            subtitle: Text(vocab.example,
-                style: const TextStyle(
-                  fontSize: 18.0,
-                )),
+            subtitle: _TextDecoration(text: abvice.detail),
           );
         },
       ),
@@ -55,8 +51,7 @@ class VocabularyScreen extends StatelessWidget {
 
 class _TextDecoration extends StatelessWidget {
   const _TextDecoration({
-    required this.text,
-    this.color,
+    required this.text, this.color,
   });
 
   final String text;
