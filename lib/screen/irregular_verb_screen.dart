@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../providers/irregular_verbs_provider.dart';
 
-import '../providers/regular_verbs_providers.dart';
-
-class RegularVerbsScreen extends StatelessWidget {
-  const RegularVerbsScreen({super.key});
+class IrregularVerbScreen extends StatelessWidget {
+  const IrregularVerbScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final regularVerbsProvider =
-        Provider.of<RegularVerbsProvider>(context).regularVerbs;
+    final irregularVerbsProvider =
+        Provider.of<IrregularVerbsProvider>(context).irregularVerbs;
 
-    if (regularVerbsProvider.isEmpty) {
-      Provider.of<RegularVerbsProvider>(context).getAllVerbs();
+    if (irregularVerbsProvider.isEmpty) {
+      Provider.of<IrregularVerbsProvider>(context).getAllVerbs();
       return Scaffold(
         appBar: AppBar(
-          title: const Text('Regular Verbs'),
+          title: const Text('Irregular Verbs'),
           centerTitle: true,
         ),
         body: const Center(
@@ -27,7 +26,7 @@ class RegularVerbsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Regular Verbs',
+          'Irregular Verbs',
           style: TextStyle(
             fontSize: 20.0,
             fontWeight: FontWeight.bold,
@@ -50,22 +49,23 @@ class RegularVerbsScreen extends StatelessWidget {
             Container(
               height: size.height * 0.8 + 56,
               child: ListView.builder(
-                itemCount: regularVerbsProvider.length,
+                itemCount: irregularVerbsProvider.length,
                 itemBuilder: (context, index) {
                   return ListTile(
                     title: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         _TextDecoration(
+                            text: irregularVerbsProvider[index]
+                                .english['present']),
+                        _TextDecoration(
                             text:
-                                regularVerbsProvider[index].english['present']),
+                                irregularVerbsProvider[index].english['past']),
                         _TextDecoration(
-                            text: regularVerbsProvider[index].english['past']),
-                        _TextDecoration(
-                            text: regularVerbsProvider[index]
+                            text: irregularVerbsProvider[index]
                                 .english['past_participle']),
                         _TextDecoration(
-                            text: regularVerbsProvider[index].spanish),
+                            text: irregularVerbsProvider[index].spanish),
                       ],
                     ),
                     subtitle: Padding(
@@ -73,13 +73,13 @@ class RegularVerbsScreen extends StatelessWidget {
                       child: Column(
                         children: [
                           _TextDecoration(
-                              text: regularVerbsProvider[index]
+                              text: irregularVerbsProvider[index]
                                   .example['present']),
                           _TextDecoration(
-                              text:
-                                  regularVerbsProvider[index].example['past']),
+                              text: irregularVerbsProvider[index]
+                                  .example['past']),
                           _TextDecoration(
-                              text: regularVerbsProvider[index]
+                              text: irregularVerbsProvider[index]
                                   .example['past_participle']),
                         ],
                       ),
