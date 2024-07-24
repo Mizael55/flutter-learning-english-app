@@ -44,7 +44,7 @@ class RegularVerbsScreen extends StatelessWidget {
               style: TextStyle(
                 fontSize: 19.0,
                 fontWeight: FontWeight.bold,
-                color: Colors.blue[900],
+                color: Colors.indigo[900],
               ),
             ),
             SizedBox(

@@ -43,7 +43,7 @@ class IrregularVerbScreen extends StatelessWidget {
               style: TextStyle(
                 fontSize: 19.0,
                 fontWeight: FontWeight.bold,
-                color: Colors.blue[900],
+                color: Colors.red[900],
               ),
             ),
             SizedBox(
