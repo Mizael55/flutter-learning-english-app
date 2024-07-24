@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'providers/irregular_verbs_provider.dart';
-import 'providers/phrasal_verbs_provider.dart';
+import 'page/app.dart';
 import 'providers/providers.dart';
-import 'providers/regular_verbs_provider.dart';
-import 'screen/screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,6 +21,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => AdvicesProvider()),
         ChangeNotifierProvider(create: (context) => ExpressionsProvider()),
         ChangeNotifierProvider(create: (context) => ReadingProvider()),
+        ChangeNotifierProvider(create: (context) => PageViewProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -32,7 +30,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const HomeScreen(),
+        home:  App(),
       ),
     );
   }
