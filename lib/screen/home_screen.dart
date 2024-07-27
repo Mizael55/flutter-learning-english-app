@@ -26,7 +26,7 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             children: [
               const TextDecoration(
-                  text: 'What do you want to learn today?', fontSize: 25),
+                  text: 'What do you want to learn?', fontSize: 25),
               const SizedBox(height: 20),
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 30),

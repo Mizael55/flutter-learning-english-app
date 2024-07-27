@@ -40,7 +40,7 @@ class RegularVerbsScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              'Present  -  Past  -  Past Participle  -  Spanish',
+              'Present - Past  - P Participle - Spanish',
               style: TextStyle(
                 fontSize: 19.0,
                 fontWeight: FontWeight.bold,
@@ -54,18 +54,22 @@ class RegularVerbsScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return ListTile(
                     title: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         _TextDecoration(
                             text:
                                 regularVerbsProvider[index].english['present']),
+                                SizedBox(width: 15),
                         _TextDecoration(
                             text: regularVerbsProvider[index].english['past']),
+                            SizedBox(width: 12),
                         _TextDecoration(
                             text: regularVerbsProvider[index]
                                 .english['past_participle']),
-                        _TextDecoration(
-                            text: regularVerbsProvider[index].spanish),
+                                SizedBox(width: 10),
+                        Expanded(
+                          child: _TextDecoration(
+                              text: regularVerbsProvider[index].spanish),
+                        ),
                       ],
                     ),
                     subtitle: Padding(

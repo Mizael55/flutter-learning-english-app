@@ -13,9 +13,9 @@ class ReadingScreen extends StatelessWidget {
       Provider.of<ReadingProvider>(context).getReadings();
       return Scaffold(
         appBar: AppBar(
-          title: const Text('Topics',
+          title: Text('Topics',
               style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.blue[900],
                   fontSize: 25.0,
                   fontWeight: FontWeight.bold)),
           centerTitle: true,
@@ -27,9 +27,9 @@ class ReadingScreen extends StatelessWidget {
     }
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Topics',
+        title:  Text('Topics',
             style: TextStyle(
-                color: Colors.black,
+                color: Colors.blue[900],
                 fontSize: 25.0,
                 fontWeight: FontWeight.bold)),
         centerTitle: true,
@@ -52,6 +52,7 @@ class ReadingScreen extends StatelessWidget {
             child: ListTile(
               title: _TextDecoration(
                 text: read.title,
+                color: Colors.blue[900],
               ),
               trailing: const Icon(Icons.arrow_forward_ios),
             ),

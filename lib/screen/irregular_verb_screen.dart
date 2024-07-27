@@ -39,7 +39,7 @@ class IrregularVerbScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              'Present  -  Past  -  Past Participle  -  Spanish',
+              'Present - Past - P Participle - Spanish',
               style: TextStyle(
                 fontSize: 19.0,
                 fontWeight: FontWeight.bold,
